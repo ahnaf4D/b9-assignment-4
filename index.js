@@ -25,4 +25,18 @@ function checkName(name) {
         return "Bad Name";
     }
 }
-
+function deleteInvalids(array) {
+    if (Array.isArray(array) !== true) {
+        return "Invalid Array"
+    }
+    else {
+        const onlyNumber = [];
+        for (let i = 0; i <= array.length; i++) {
+            const element = array[i];
+            if (typeof element === 'number' && !isNaN(element)) {
+                onlyNumber.push(element);
+            }
+        }
+     return onlyNumber;
+    }
+}
