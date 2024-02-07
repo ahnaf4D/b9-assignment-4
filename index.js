@@ -43,9 +43,9 @@ function deleteInvalids(array) {
 function password(obj) {
     const objLength = Object.keys(obj).length;
     const birthYear = obj.birthYear;
-    const finalBirthYear = birthYear.toString();
-    const birthYearLength = finalBirthYear.length;
-    if (objLength !== 3) {
+    const convertedString = birthYear.toString();
+    const convertedStringLen = convertedString.length;
+    if (objLength !== 3 && convertedStringLen !== 4) {
         return 'invalid';
     }
     else {
@@ -55,3 +55,5 @@ function password(obj) {
         return passwordGenerated;
     }
 }
+const object = { name: 'toky' , birthYear: 200, siteName: 'Facebook' }
+console.log(password(object));
