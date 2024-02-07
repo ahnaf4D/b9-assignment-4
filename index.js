@@ -37,6 +37,21 @@ function deleteInvalids(array) {
                 onlyNumber.push(element);
             }
         }
-     return onlyNumber;
+        return onlyNumber;
+    }
+}
+function password(obj) {
+    const objLength = Object.keys(obj).length;
+    const birthYear = obj.birthYear;
+    const finalBirthYear = birthYear.toString();
+    const birthYearLength = finalBirthYear.length;
+    if (objLength !== 3) {
+        return 'invalid';
+    }
+    else {
+        const { name, birthYear, siteName } = obj;
+        const siteNameCapitalized = siteName.charAt(0).toUpperCase() + siteName.slice(1);
+        const passwordGenerated = `${siteNameCapitalized}#${name}@${birthYear}`;
+        return passwordGenerated;
     }
 }
