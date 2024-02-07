@@ -9,3 +9,20 @@ function calculateMoney(ticketSale) {
         return profitOrLoss;
     }
 }
+function checkName(name) {
+    if (typeof name !== 'string') {
+        return 'invalid';
+    }
+    else {
+        let makeStrLowerCase = name.toLowerCase();
+        let wantedStr = ['a', 'y', 'i', 'e', 'o', 'u', 'w'];
+        for (let i = 0; i <= wantedStr.length; i++) {
+            const element = wantedStr[i];
+            if (makeStrLowerCase.endsWith(element) === true) {
+                return "Good Name";
+            }
+        }
+        return "Bad Name";
+    }
+}
+
