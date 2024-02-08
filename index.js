@@ -42,7 +42,10 @@ function deleteInvalids(array) {
 }
 function password(obj) {
     const objLength = Object.keys(obj).length;
-    if (objLength !== 3) {
+    const birthYearProp = obj.birthYear;
+    const birthYearStr = birthYearProp.toString();
+    const birthYearLen = birthYearStr.length;
+    if (objLength !== 3 || birthYearLen !== 4) {
         return 'Invalid';
     }
     else {
@@ -52,8 +55,6 @@ function password(obj) {
         return passwordGenerated;
     }
 }
-// check deleteInvalids
-console.log(password({ name: 'toky', siteName: 'Facebook' }));
 function monthlySavings(arr, livingCost) {
     if (Array.isArray(arr) !== true && typeof livingCost !== 'number') {
         return 'invalid input';
