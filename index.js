@@ -42,11 +42,8 @@ function deleteInvalids(array) {
 }
 function password(obj) {
     const objLength = Object.keys(obj).length;
-    const birthYear = obj.birthYear;
-    const convertedString = birthYear.toString();
-    const convertedStringLen = convertedString.length;
-    if (objLength !== 3 && convertedStringLen !== 4) {
-        return 'invalid';
+    if (objLength !== 3) {
+        return 'Invalid';
     }
     else {
         const { name, birthYear, siteName } = obj;
@@ -55,5 +52,31 @@ function password(obj) {
         return passwordGenerated;
     }
 }
-const object = { name: 'toky' , birthYear: 200, siteName: 'Facebook' }
-console.log(password(object));
+// check deleteInvalids
+console.log(password({ name: 'toky', siteName: 'Facebook' }));
+function monthlySavings(arr, livingCost) {
+    if (Array.isArray(arr) !== true && typeof livingCost !== 'number') {
+        return 'invalid input';
+    }
+    else {
+        const tax = 600;
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let element = arr[i];
+            if (element >= 3000) {
+                element = element - tax;
+                sum += element;
+            }
+            else {
+                sum += element;
+            }
+        }
+        const userSavings = sum - livingCost;
+        if (userSavings >= 0) {
+            return userSavings;
+        }
+        else {
+            return 'earn more';
+        }
+    }
+}
